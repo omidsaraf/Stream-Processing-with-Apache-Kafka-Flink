@@ -154,7 +154,7 @@ http://localhost:8081/#/overview
 
 ## **Running the Jobs**
 
-### **Start Job (Processing Web Traffic)**
+### **Start Job (Processing Web Traffic)** 
 
 The **start_job.py** script listens for web traffic events from **Kafka**, processes the events by enriching them with geolocation data, and writes the enriched data into **PostgreSQL**.
 
