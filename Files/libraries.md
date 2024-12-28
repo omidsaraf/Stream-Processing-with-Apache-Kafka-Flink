@@ -1,5 +1,0 @@
-'''
-pytest
-pyspark
-pyspark[sql]
-'''
