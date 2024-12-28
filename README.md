@@ -3,10 +3,9 @@
 
 **End-to-End Data Engineering Project**
 
-This project demonstrates the implementation of an end-to-end **real-time data pipeline** using **Apache Kafka**, **PySpark**, and **PostgreSQL** to process and aggregate web traffic data. The solution consists of two main jobs:
+This project demonstrates the implementation of an end-to-end **real-time data pipeline** using **Apache Kafka**, **PySpark**, and **PostgreSQL** to process web traffic data. The solution consists of following job:
 
-1. **Start Job**: Processes raw web traffic data from Kafka, enriches it with geolocation information, and stores it in **PostgreSQL**.
-2. **Aggregation Job**: Aggregates web traffic data based on specific dimensions (host and referrer), and stores the results for reporting and analysis.
+**Processing_job**: Processes raw web traffic data from Kafka, enriches it with geolocation information, and stores it in **PostgreSQL**.
 
 ---
 
@@ -30,7 +29,7 @@ This project demonstrates the implementation of an end-to-end **real-time data p
 
 ## **Overview**
 
-The goal of this project is to simulate the end-to-end processing of web traffic data. **Apache Kafka** is used as the messaging system to consume real-time web traffic events, **PySpark** is employed to process and enrich the data, and **PostgreSQL** serves as the destination for storing processed and aggregated data.
+The goal of this project is to simulate the end-to-end processing of web traffic data. consume and Processes real-time web traffic events with **Apache Kafka** via **Apache Flink**, enriches it with  geolocation information by **PySpark**, and stores it in **PostgreSQL**. 
 
 ---
 
@@ -39,22 +38,10 @@ The goal of this project is to simulate the end-to-end processing of web traffic
 This project leverages the following tools and technologies:
 
 - **Apache Kafka**: A distributed streaming platform used to ingest real-time web traffic data.
-- **PySpark**: A Python API for Apache Spark used for distributed data processing and transformations.
 - **PostgreSQL**: A relational database for storing processed and aggregated web traffic data.
 - **Docker**: Containerization tool for running Kafka and PostgreSQL services.
-- **Python**: Programming language used for the data pipeline logic.
-
----
-
-## **System Requirements**
-
-Ensure the following system requirements are met:
-
-- **Python 3.8+** (Recommended)
-- **Apache Kafka** (Docker-based setup or cloud-hosted)
-- **PostgreSQL** (Docker-based setup or cloud-hosted)
-- **Docker** (To orchestrate Kafka and PostgreSQL services)
-- **PySpark** (For distributed data processing)
+- **Apache Flink**: 
+- **PySpark**: A Python API for Apache Spark used for distributed data processing and transformations.
 
 ---
 
@@ -66,7 +53,9 @@ To run the Python jobs, the following libraries are required. You can install th
 pip install pyspark requests psycopg2 kafka-python pandas
 ```
 
----
+Running `pip install -r requirements.txt` will install them.
+
+
 
 ## **Project Structure**
 
@@ -75,12 +64,14 @@ The project is structured as follows:
 ```plaintext
 .
 ├── docker-compose.yml     # Docker Compose configuration for Kafka and PostgreSQL
+├── Dockefile             
 ├── job/
-│   ├── start_job.py       # Python job to process web traffic data
-│   └── aggregation_job.py # Python job to aggregate web traffic data
+│   ├── Processing_job.py       # Python job to process web traffic data
 ├── requirements.txt       # Python dependencies file
-└── flink-env.env          # Environment variables for Kafka and PostgreSQL connections
+└── stream.env             # Environment variables for Kafka/Flink/PostgreSQL connections
+├── MakeFile            
 ```
+![image](https://github.com/user-attachments/assets/67421169-ab00-4b5c-92a4-5a75fa6d6d77)
 
 ---
 
