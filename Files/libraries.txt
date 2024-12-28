@@ -1,0 +1,5 @@
+'''
+pytest
+pyspark
+pyspark[sql]
+'''''
