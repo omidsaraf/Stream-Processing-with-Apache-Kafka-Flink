@@ -163,11 +163,7 @@ python job/aggregation_job.py
 
 1. **Data Aggregation (PySpark)**: The **aggregation_job.py** script reads the processed data from **PostgreSQL**, performs aggregation operations like counting the number of hits per host and referrer, and writes the results back to **PostgreSQL**.
 
----
 
-## **License**
-
-MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
