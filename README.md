@@ -133,7 +133,6 @@ docker compose stream-env.env up --build --remove-orphans  -d
 ```bash
 docker-compose up --build
 ````
-![image](https://github.com/user-attachments/assets/dd341b57-6c24-44b3-bc6f-719faf5a3d8f)
 
 
 This will start **Apache Kafka**, **Apache Flink** and **PostgreSQL** in separate containers.
