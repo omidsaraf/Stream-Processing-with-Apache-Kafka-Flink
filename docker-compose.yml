@@ -1,0 +1,59 @@
+version: "3.8"
+services:
+  jobmanager:
+    image: flink:1.16.2
+    container_name: jobmanager
+    environment:
+      - JOB_MANAGER_RPC_ADDRESS=jobmanager
+      - FLINK_PROPERTIES="jobmanager.rpc.address: jobmanager"
+    ports:
+      - "8081:8081"
+    networks:
+      - flink-net
+
+  taskmanager:
+    image: flink:1.16.2
+    container_name: taskmanager
+    environment:
+      - FLINK_PROPERTIES="taskmanager.numberOfTaskSlots: 1"
+    depends_on:
+      - jobmanager
+    networks:
+      - flink-net
+
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=web_traffic
+    ports:
+      - "5432:5432"
+    networks:
+      - flink-net
+
+  kafka:
+    image: wurstmeister/kafka:latest
+    environment:
+      KAFKA_ADVERTISED_LISTENER: INSIDE://kafka:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL: PLAINTEXT
+      KAFKA_LISTENER_NAME_INTERNAL: INSIDE
+      KAFKA_LISTENER_PORT_INTERNAL: 9093
+      KAFKA_LISTENER_INTERNAL: INSIDE://0.0.0.0:9093
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_MODE: BROKER
+    ports:
+      - "9093:9093"
+    networks:
+      - flink-net
+
+  zookeeper:
+    image: wurstmeister/zookeeper:latest
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    networks:
+      - flink-net
+
+networks:
+  flink-net:
+    driver: bridge
