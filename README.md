@@ -1,6 +1,4 @@
-Here is the finalized `README.md` for your GitHub project, structured in a professional and clear manner, tailored to your web traffic processing pipeline using **Kafka**, **Flink**, and **Postgres**.
 
-```markdown
 # Stream Processing with Apache Kafka, Flink, and Postgres
 
 ### End-to-End Data Engineering Project for Web Traffic Processing
