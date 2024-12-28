@@ -167,12 +167,9 @@ python job/Processing_job.py
 
 ### **Job (Web Traffic Data)**
 
-**Processing_job**: Processes raw web traffic data from Kafka, enriches it with geolocation information, and stores it in **PostgreSQL**.
+**stream processing job** using **PySpark** to process real-time web traffic data from a **Kafka topic** and aggregate it before storing the results in a **PostgreSQL database**. Below is a breakdown of what each part of the code is doing:
 
-
-This code defines a **stream processing job** using **PySpark** to process real-time web traffic data from a **Kafka topic** and aggregate it before storing the results in a **PostgreSQL database**. Below is a breakdown of what each part of the code is doing:
-
-### 1. **Initialization of Spark Session:**
+#### 1. **Initialization of Spark Session:**
    ```python
    spark = SparkSession.builder \
        .appName("Web Traffic Processing") \
@@ -180,14 +177,14 @@ This code defines a **stream processing job** using **PySpark** to process real-
    ```
    This initializes a **SparkSession**, which is the entry point for working with Spark. The application is named `"Web Traffic Processing"`.
 
-### 2. **Kafka Configuration:**
+#### 2. **Kafka Configuration:**
    ```python
    kafka_bootstrap_servers = os.environ.get('KAFKA_URL', 'localhost:9093')
    kafka_topic = os.environ.get('KAFKA_TOPIC', 'web_traffic_topic')
    ```
-   Here, the Kafka bootstrap server and Kafka topic are configured via environment variables. If the variables are not set, it defaults to `localhost:9093` for the Kafka server and `web_traffic_topic` for the Kafka topic.
+  Here, the Kafka bootstrap server and Kafka topic are configured via environment variables. If the variables are not set, it defaults to `localhost:9093` for the Kafka server and `web_traffic_topic` for the Kafka topic.
 
-### 3. **Define Kafka Data Source:**
+#### 3. **Define Kafka Data Source:**
    ```python
    kafka_df = spark.readStream \
        .format("kafka") \
@@ -256,22 +253,17 @@ This code defines a **stream processing job** using **PySpark** to process real-
 This setup is typically used for real-time analytics, such as monitoring web traffic patterns and storing aggregate results for further analysis or reporting.
 
 
+**How It Works**
+
 To run this job:
 
 ```bash
 python job/aggregation_job.py
 ```
 
----
-
-**How It Works**
-
-1. **Data Ingestion (Kafka)**: Web traffic events, such as IP address, referrer, user agent, and URL, are ingested by **Kafka** in real time.
-   
-2. **Data Enrichment**: The **start_job.py** fetches additional geolocation information using an external API based on the IP address.
-
-3. **PostgreSQL Storage**: The enriched data is written into a **PostgreSQL** database for further processing and querying.
+- It connects to a **Kafka topic** to stream real-time web traffic data.
+- It processes the data by parsing the JSON and performing aggregation based on **host** and **referrer** within **5-minute windows**.
+- It writes the aggregated web traffic statistics (the number of hits) into a **PostgreSQL database** in an **append-only** manner.
 
 
----
 
