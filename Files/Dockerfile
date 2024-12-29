@@ -18,4 +18,4 @@ COPY . /opt/flink/
 WORKDIR /opt/flink
 
 # Set the default entrypoint to run the job
-CMD ["python3", "web_traffic_pyspark.py"]
+CMD ["python3", "job/Processing_job.py"]

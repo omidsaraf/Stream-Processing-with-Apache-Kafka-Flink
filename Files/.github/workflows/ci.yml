@@ -1,0 +1,88 @@
+name: CI Workflow
+
+# Trigger the workflow on push or pull request events
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: web_traffic
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+      kafka:
+        image: wurstmeister/kafka:latest
+        environment:
+          KAFKA_ADVERTISED_LISTENER: INSIDE://kafka:9093
+          KAFKA_LISTENER_SECURITY_PROTOCOL: PLAINTEXT
+          KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+        ports:
+          - "9093:9093"
+        options: >-
+          --health-cmd="kafka-topics --zookeeper zookeeper:2181 --list"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+  install_dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+
+      - name: Install dependencies
+        run: |
+          pip install -r libraries.txt
+          pip install pytest
+
+  test:
+    runs-on: ubuntu-latest
+    needs: install_dependencies
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: |
+          pytest --maxfail=1 --disable-warnings -q
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: |
+          docker build -t flink-web-traffic-processing .
+
+      - name: Run Docker container
+        run: |
+          docker-compose -f docker-compose.yml up -d
+
+      - name: Stop Docker containers
+        run: |
+          docker-compose down --volumes --rmi all

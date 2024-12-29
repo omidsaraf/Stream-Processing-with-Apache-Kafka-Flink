@@ -1,3 +1,5 @@
+# Makefile
+
 # Set variables
 PLATFORM ?= linux/amd64
 IMAGE_NAME = flink-web-traffic-processing
@@ -44,7 +46,7 @@ down:
 .PHONY: start
 ## Starts the Flink job
 start:
-	docker-compose exec jobmanager flink run -py /opt/flink/web_traffic_pyspark.py
+	docker-compose exec jobmanager flink run -py /opt/flink/job/Processing_job.py
 
 .PHONY: stop
 ## Stops the Flink job

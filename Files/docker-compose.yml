@@ -1,4 +1,5 @@
 version: "3.8"
+
 services:
   jobmanager:
     image: flink:1.16.2
@@ -6,6 +7,8 @@ services:
     environment:
       - JOB_MANAGER_RPC_ADDRESS=jobmanager
       - FLINK_PROPERTIES="jobmanager.rpc.address: jobmanager"
+    env_file:
+      - ./stream.env
     ports:
       - "8081:8081"
     networks:
@@ -16,6 +19,8 @@ services:
     container_name: taskmanager
     environment:
       - FLINK_PROPERTIES="taskmanager.numberOfTaskSlots: 1"
+    env_file:
+      - ./stream.env
     depends_on:
       - jobmanager
     networks:
@@ -27,10 +32,14 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=web_traffic
+    env_file:
+      - ./stream.env
     ports:
       - "5432:5432"
     networks:
       - flink-net
+    volumes:
+      - ./ddl/init.sql:/docker-entrypoint-initdb.d/init.sql  # Mount the SQL file to run on init
 
   kafka:
     image: wurstmeister/kafka:latest
@@ -42,6 +51,8 @@ services:
       KAFKA_LISTENER_INTERNAL: INSIDE://0.0.0.0:9093
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
       KAFKA_LISTENER_MODE: BROKER
+    env_file:
+      - ./stream.env
     ports:
       - "9093:9093"
     networks:
@@ -57,3 +68,8 @@ services:
 networks:
   flink-net:
     driver: bridge
+
+healthcheck:
+    test: ["CMD", "pg_isready", "-U", "postgres"]
+    interval: 30s
+    retries: 3
