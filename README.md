@@ -1,7 +1,8 @@
 
-## Web Traffic Processing with Apache Kafka, PySpark, and PostgreSQL 
+## Real Time Data Engineering with Apache Kafka, PySpark, and PostgreSQL 
 
-**End-to-End Data Engineering Project**
+**Web Traffic Processing- Real Time Data Engineering Project**
+![image](https://github.com/user-attachments/assets/f2dd5d03-4d92-4450-9d63-cef874d4ee99)
 
 The main goal of this project is to build an **real-time data pipeline** that processes raw web traffic data. The pipeline:
 - Consumes and processes real-time web traffic events using **Apache Kafka**.
