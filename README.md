@@ -2,12 +2,10 @@
 # Web Traffic Processing with Apache Kafka, PySpark, and PostgreSQL 
 
 **End-to-End Data Engineering Project**
+Processes raw web traffic data from Kafka, enriches it with geolocation information, and stores it in **PostgreSQL**. This is  used for real-time analytics, such as monitoring web traffic patterns and storing aggregate results for further analysis or reporting.
 
-This project demonstrates the implementation of an end-to-end **real-time data pipeline** using **Apache Kafka**, **PySpark**, and **PostgreSQL** to process web traffic data. The solution consists of following job:
+This project demonstrates the implementation of an end-to-end **real-time data pipeline** using **Apache Kafka**, **Apache Flink**, **PySpark**, **PostgreSQL**, **Docker** to process web traffic data. The solution consists of following job:
 
-**Processing_job**: Processes raw web traffic data from Kafka, enriches it with geolocation information, and stores it in **PostgreSQL**.
-
----
 
 ## **Table of Contents**
 
@@ -51,15 +49,11 @@ To run the Python jobs, the following libraries are required. You can install th
 
 ```bash
 pip install pyspark requests psycopg2 kafka-python pandas
+pip install -r Libraries.md
 ```
-
-Running `pip install -r requirements.txt` will install them.
-
-
 
 ## **Project Structure**
 
-The project is structured as follows:
 
 ```plaintext
 .
@@ -154,17 +148,7 @@ http://localhost:8081/#/overview
 
 ## **Running the Jobs**
 
-### **Start Job (Processing Web Traffic)** 
-
-The **start_job.py** script listens for web traffic events from **Kafka**, processes the events by enriching them with geolocation data, and writes the enriched data into **PostgreSQL**.
-
-To run this job:
-
-```bash
-python job/Processing_job.py
-```
-
-### **Job (Web Traffic Data)**
+### **Job (Web Traffic Data) Setup**
 
 **stream processing job** using **PySpark** to process real-time web traffic data from a **Kafka topic** and aggregate it before storing the results in a **PostgreSQL database**. Below is a breakdown of what each part of the code is doing:
 
@@ -244,21 +228,15 @@ python job/Processing_job.py
    - The **output mode** is set to `"append"`, which means new records will be added to the PostgreSQL table without modifying existing data.
    - The job will **continue running indefinitely** until terminated (`awaitTermination`).
 
-### Summary of What This Job Does:
-- It connects to a **Kafka topic** to stream real-time web traffic data.
-- It processes the data by parsing the JSON and performing aggregation based on **host** and **referrer** within **5-minute windows**.
-- It writes the aggregated web traffic statistics (the number of hits) into a **PostgreSQL database** in an **append-only** manner.
 
-This setup is typically used for real-time analytics, such as monitoring web traffic patterns and storing aggregate results for further analysis or reporting.
-
-
-**How It Works**
+### **How It Works**
 
 To run this job:
 
 ```bash
-python job/aggregation_job.py
+python job/Processing_job.py
 ```
+![image](https://github.com/user-attachments/assets/2baf1f40-bd52-40e3-a8d8-6c60741e73be)
 
 - It connects to a **Kafka topic** to stream real-time web traffic data.
 - It processes the data by parsing the JSON and performing aggregation based on **host** and **referrer** within **5-minute windows**.
