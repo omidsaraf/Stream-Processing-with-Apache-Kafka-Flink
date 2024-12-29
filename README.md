@@ -273,7 +273,7 @@ This job:
 ## Cost Analysis
 
 
-```
+
 
 | **Component**             | **Configuration**                                              | **Cost Impact**                     | **Considerations**                                                                                   |
 |---------------------------|-----------------------------------------------------------------|--------------------------------------|-----------------------------------------------------------------------------------------------------|
@@ -287,7 +287,7 @@ This job:
 | **Backup & Recovery**      | Manual backups for PostgreSQL & Kafka                          | **Low**                              | Backup processes are either manual or via simple scripts. A fully automated backup and disaster recovery solution would increase costs. |
 | **Monitoring & Logging**   | Docker logs for monitoring and troubleshooting                  | **Low**                              | No centralized monitoring solution. Manual log management is sufficient for smaller setups but could become inefficient and costly as the system scales. |
 | **Flink State & Checkpoints** | Stored in Docker container volumes                            | **Low**                              | Local storage for checkpoints and state. As the application scales, additional storage and management solutions would be required, leading to higher costs. |
-```
+
 
 ### **Cost Breakdown considerations**
 
