@@ -59,14 +59,23 @@ pip install -r Libraries.md
 
 
 ```plaintext
-.
-├── docker-compose.yml           # Docker Compose configuration for Kafka and PostgreSQL
-├── Dockefile             
+
+├── .github/
+│   └── workflows/
+│       └── ci.yml               # GitHub Actions CI/CD pipeline
+├── ddl/
+│   └── init.sql                 # SQL script to initialize PostgreSQL table
+├── docker-compose.yml           # Docker Compose for services (Flink, PostgreSQL, Kafka)
+├── Dockerfile                   # Dockerfile for building PyFlink container
 ├── job/
-│   ├── Processing_job.py       # Python job to process web traffic data
-├── libraries.txt               # Python dependencies file
-└── stream.env                  # Environment variables for Kafka/Flink/PostgreSQL connections
-├── MakeFile            
+│   ├── Processing_job.py        # Flink job script
+│   ├── test_processing_job.py   # Pytest file for testing
+├── libraries.txt                # Python dependencies for local use
+├── Makefile                     # Makefile for managing tasks
+├── requirements.txt             # Python dependencies for CI/CD
+├── stream.env                   # Environment variables for services
+
+        
 ```
 ![image](https://github.com/user-attachments/assets/67421169-ab00-4b5c-92a4-5a75fa6d6d77)
 
