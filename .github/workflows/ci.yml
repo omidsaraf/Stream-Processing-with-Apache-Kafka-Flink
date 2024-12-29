@@ -1,4 +1,4 @@
-name: CI Workflow
+name: CI Workflow 
 
 # Trigger the workflow on push or pull request events
 on:
