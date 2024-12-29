@@ -28,8 +28,9 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 8. [Dependencies](#dependencies)
 9. [Environment Configuration](#environment-configuration)
 10. [Makefile](#makefile)
-11. [Cost Analysis](#cost-analysis)
-12. [How It Works](#how-it-works)
+11. [How It Works](#how-it-works)
+12. [Cost Analysis](#cost-analysis)
+
 
 ---
 
