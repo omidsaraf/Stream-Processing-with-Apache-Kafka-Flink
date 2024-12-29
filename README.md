@@ -34,7 +34,7 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 
 ---
 
-## **Project Structure**
+### **Project Structure**
 
 ```plaintext
 ├── .github/
@@ -55,7 +55,7 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 
 ---
 
-## **Tools and Technologies**
+### **Tools and Technologies**
 
 This project leverages the following tools and technologies:
 
@@ -67,7 +67,7 @@ This project leverages the following tools and technologies:
 
 ---
 
-## **Required Libraries**
+### **Required Libraries**
 
 To run the Python jobs, the following libraries are required. You can install them via `pip`:
 
@@ -78,16 +78,16 @@ pip install -r libraries.txt
 
 ---
 
-## **Setup Guide**
+### **Setup Guide**
 
-### **Step 1: Clone the repository**:
+#### **Step 1: Clone the repository**:
 
 ```bash
 git clone https://github.com/yourusername/web-traffic-processing.git
 cd web-traffic-processing
 ```
 
-### **Step 2: Install Libraries**
+#### **Step 2: Install Libraries**
 
 Run the following command to install the necessary libraries:
 
@@ -95,7 +95,7 @@ Run the following command to install the necessary libraries:
 pip install -r libraries.txt
 ```
 
-### **Step 3: Configure Environment Variables**
+#### **Step 3: Configure Environment Variables**
 
 Create a `.env` file and specify the environment variables:
 
@@ -126,7 +126,7 @@ FLINK_VERSION=1.16.0
 PYTHON_VERSION=3.7.9
 ```
 
-### **Step 4: Set Up Docker Services**
+#### **Step 4: Set Up Docker Services**
 
 Start by setting up **Apache Kafka** and **PostgreSQL** services using Docker:
 
@@ -138,20 +138,20 @@ This will start **Apache Kafka**, **Apache Flink**, and **PostgreSQL** in separa
 
 ---
 
-## **Check Environments**
+### **Check Environments**
 
-### **Docker**
+#### **Docker**
 
 ![Docker](https://github.com/user-attachments/assets/b5e1ff83-dc1c-4629-ba75-da2437dd2891)
 
-### **Postgres**
+#### **Postgres**
 
 Login to **pgAdmin** and create the sink (target table).
 
 ![image](https://github.com/user-attachments/assets/18568f7c-94df-4d24-ae00-5ac2ee76536c)
 
 
-### **Apache Flink**
+#### **Apache Flink**
 
 Access **Apache Flink** via the UI at [http://localhost:8081/#/overview](http://localhost:8081/#/overview).
 
@@ -160,13 +160,13 @@ Access **Apache Flink** via the UI at [http://localhost:8081/#/overview](http://
 
 ---
 
-## **Running the Jobs**
+### **Running the Jobs**
 
-### **Job (Web Traffic Data) Setup**
+#### **Job (Web Traffic Data) Setup**
 
 This section describes the **stream processing job** using **PySpark** to process real-time web traffic data from a **Kafka topic** and aggregate it before storing the results in a **PostgreSQL database**.
 
-#### 1. **Initialization of Spark Session:**
+##### 1. **Initialization of Spark Session:**
 
 ```python
 spark = SparkSession.builder \
@@ -176,7 +176,7 @@ spark = SparkSession.builder \
 
 This initializes a **SparkSession**, which is the entry point for working with Spark. The application is named `"Web Traffic Processing"`.
 
-#### 2. **Kafka Configuration:**
+##### 2. **Kafka Configuration:**
 
 ```python
 kafka_bootstrap_servers = os.environ.get('KAFKA_URL', 'localhost:9093')
@@ -185,7 +185,7 @@ kafka_topic = os.environ.get('KAFKA_TOPIC', 'web_traffic_topic')
 
 Here, the Kafka bootstrap server and Kafka topic are configured via environment variables. If the variables are not set, they default to `localhost:9093` for the Kafka server and `web_traffic_topic` for the Kafka topic.
 
-#### 3. **Define Kafka Data Source:**
+##### 3. **Define Kafka Data Source:**
 
 ```python
 kafka_df = spark.readStream \
@@ -197,7 +197,7 @@ kafka_df = spark.readStream \
 
 This creates a **streaming DataFrame** that reads messages from the specified Kafka topic (`web_traffic_topic`). The data from Kafka will be read continuously in real-time.
 
-#### 4. **Define Schema for Incoming Data:**
+##### 4. **Define Schema for Incoming Data:**
 
 ```python
 schema = "url STRING, referrer STRING, user_agent STRING, host STRING, ip STRING, headers STRING, event_time STRING"
@@ -205,7 +205,7 @@ schema = "url STRING, referrer STRING, user_agent STRING, host STRING, ip STRING
 
 Here, a schema is defined to describe the structure of each Kafka message (with fields like `url`, `referrer`, `user_agent`, `host`, `ip`, `headers`, and `event_time`).
 
-#### 5. **Parsing Kafka Data:**
+##### 5. **Parsing Kafka Data:**
 
 ```python
 web_traffic_df = kafka_df.selectExpr("CAST(value AS STRING)") \
@@ -218,7 +218,7 @@ This part:
 - Extracts fields from the JSON structure of the Kafka message (via `json_tuple`), assigning them to the appropriate column names (`url`, `referrer`, etc.).
 - Selects the columns to keep for further processing.
 
-#### 6. **Aggregating Web Traffic:**
+##### 6. **Aggregating Web Traffic:**
 
 ```python
 aggregated_df = web_traffic_df \
@@ -240,7 +240,7 @@ In this step:
   - **Host** and **referrer**.
 - The **count of records (`num_hits`)** for each combination of the window, host, and referrer is calculated.
 
-#### 7. **Output to PostgreSQL:**
+##### 7. **Output to PostgreSQL:**
 
 ```python
 aggregated_df.writeStream \
@@ -260,7 +260,7 @@ This part outputs the results of the aggregation to a PostgreSQL database:
 
 ---
 
-### **How It Works**
+#### **How It Works**
 
 To run this job:
 
@@ -275,7 +275,7 @@ This job:
 
 ------
 
-## Cost Analysis
+### Cost Analysis
 
 
 
