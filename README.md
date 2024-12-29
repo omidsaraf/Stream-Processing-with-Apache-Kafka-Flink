@@ -12,7 +12,7 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 
 ---
 
-## **Table of Contents**
+### **Table of Contents**
 
 1. [Project Structure](#project-structure)
 2. [Tools and Technologies](#tools-and-technologies)
@@ -24,9 +24,13 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
    1. [GitHub Actions Workflow](#github-actions-workflow)
 6. [PostgreSQL Setup](#postgresql-setup)
    1. [SQL DDL Script](#sql-ddl-script)
-7. [Environment Configuration](#environment-configuration)
-8. [Makefile](#makefile)
-9. [Cost Analysis and Pros/Cons of Tools](#Cost-Analysis-and-Pros/Cons-of-Tools)
+7. [Dependencies](#dependencies)
+8. [Environment Configuration](#environment-configuration)
+9. [Makefile](#makefile)
+10. [Cost Analysis](#cost-analysis)
+    1. [Cost Breakdown](#cost-breakdown)
+    2. [Cost Considerations](#cost-considerations)
+11. [How It Works](#how-it-works)
 
 ---
 
