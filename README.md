@@ -47,7 +47,8 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 │   ├── Processing_job.py        # Flink job script
 │   ├── test_processing_job.py   # Pytest file for testing
 ```
-![image](https://github.com/user-attachments/assets/f0c52cc9-ee77-49ab-a05e-aa7488646d32)
+![image](https://github.com/user-attachments/assets/a78f49a4-e93e-47da-938d-0a22fed3accf)
+
 
 
 ---
