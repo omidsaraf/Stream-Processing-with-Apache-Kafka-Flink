@@ -1,5 +1,5 @@
 
-## Real Time Data Engineering with Apache Kafka, PySpark, and PostgreSQL 
+## Real Time Data Engineering (Apache Kafka, PySpark, and PostgreSQL)
 
 **Web Traffic Processing- Real Time Data Engineering Project**
 ![image](https://github.com/user-attachments/assets/f2dd5d03-4d92-4450-9d63-cef874d4ee99)
