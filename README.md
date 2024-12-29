@@ -142,7 +142,8 @@ This will start **Apache Kafka**, **Apache Flink**, and **PostgreSQL** in separa
 
 Login to **pgAdmin** and create the sink (target table).
 
-![Postgres](https://github.com/user-attachments/assets/51ad5abc-f5f1-4f59-bd88-f4a10ab86701)
+![image](https://github.com/user-attachments/assets/18568f7c-94df-4d24-ae00-5ac2ee76536c)
+
 
 ### **Apache Flink**
 
