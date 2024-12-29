@@ -115,32 +115,7 @@ pip install -r libraries.txt
 
 Create a `.env` file and specify the environment variables:
 
-```env
-HOST_PORT=5432
-CONTAINER_PORT=5432
-
-DOCKER_CONTAINER=my-postgres-container
-DOCKER_IMAGE=my-postgres-image
-
-PGADMIN_EMAIL=postgres@postgres.com
-PGADMIN_PASSWORD=postgres
-PGADMIN_PORT=5050
-
-POSTGRES_USER=youruser
-POSTGRES_PASSWORD=yourpassword
-POSTGRES_DB=web_traffic
-POSTGRES_URL=jdbc:postgresql://localhost:5432/web_traffic
-JDBC_BASE_URL="jdbc:postgresql://host.docker.internal:5432"
-
-KAFKA_URL=kafka:9093
-KAFKA_TOPIC=web_traffic_topic
-KAFKA_GROUP=web_traffic_group
-IP_CODING_KEY="MAKE AN ACCOUNT AT https://www.ip2location.io/ TO GET KEY"
-
-FLINK_JOBMANAGER_RPC_ADDRESS=jobmanager
-FLINK_VERSION=1.16.0
-PYTHON_VERSION=3.7.9
-```
+[stream.env](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/stream.env)
 
 ##### **Step 4: Set Up Docker Services**
 
