@@ -7,5 +7,6 @@ CREATE TABLE IF NOT EXISTS aggregated_web_traffic (
     host VARCHAR,
     ip VARCHAR,
     headers VARCHAR,
-    event_time TIMESTAMP(3)
+    event_time TIMESTAMP,
+    num_hits INT
 );
