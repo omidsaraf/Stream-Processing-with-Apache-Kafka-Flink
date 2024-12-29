@@ -70,61 +70,16 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 
 ### **Tools and Technologies**
 
-This project leverages the following tools and technologies:
-
-**Apache Kafka**
-
-Purpose: Real-time data streaming and processing.
-
-Components: Kafka Producers, Kafka Topics, Kafka Brokers.
-
-Cluster Manager: Zookeeper.
-
-**Spark Streaming**
-
-Purpose: Real-time data processing.
-
-Components: Spark Jobs, Spark Functions.
-
-Cluster Manager: Spark Driver.
-
-**Apache Flink**
-
-Purpose: Stream processing and orchestration.
-
-Components: Flink Job Manager, Flink Task Manager.
-
-**PySpark**
-
-Purpose: Data aggregation and processing.
-
-Components: DataFrame operations, Data Windows.
-
-**PostgreSQL**
-
-Purpose: Data storage and management.
-
-Components: PostgreSQL Database, Data Tables.
-
-**GitHub**
-
-Purpose: Continuous Integration and Continuous Deployment (CI/CD).
-
-Components: Automate build, test, and deploy pipelines.
-
-**Docker**
-
-Purpose: Containerization for consistent environments.
-
-Components: Docker Containers.
-
-**VS Code**
-
-Purpose: Development environment.
-
-Components: Integrated development and testing environment, supports coding, debugging, and version control.
-
-
+| **Tool/Technology**      | **Purpose**                                      | **Components**                                  | **Cluster Manager**         |
+|--------------------------|--------------------------------------------------|-------------------------------------------------|-----------------------------|
+| **Apache Kafka**          | Real-time data streaming and processing.         | Kafka Producers, Kafka Topics, Kafka Brokers    | Zookeeper                   |
+| **Spark Streaming**       | Real-time data processing.                       | Spark Jobs, Spark Functions                     | Spark Driver                |
+| **Apache Flink**          | Stream processing and orchestration.             | Flink Job Manager, Flink Task Manager           | N/A                         |
+| **PySpark**               | Data aggregation and processing.                 | DataFrame operations, Data Windows              | N/A                         |
+| **PostgreSQL**            | Data storage and management.                     | PostgreSQL Database, Data Tables                | N/A                         |
+| **GitHub**                | Continuous Integration and Continuous Deployment (CI/CD). | Automate build, test, and deploy pipelines      | N/A                         |
+| **Docker**                | Containerization for consistent environments.    | Docker Containers                               | N/A                         |
+| **VS Code**               | Development environment.                         | Integrated development and testing environment, supports coding, debugging, and version control | N/A                         |
 
 ---
 
