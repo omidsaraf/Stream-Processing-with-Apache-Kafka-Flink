@@ -72,11 +72,59 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 
 This project leverages the following tools and technologies:
 
-- **Apache Kafka**: A distributed streaming platform used to ingest real-time web traffic data.
-- **PostgreSQL**: A relational database for storing processed and aggregated web traffic data.
-- **Docker**: Containerization tool for running Kafka and PostgreSQL services.
-- **Apache Flink**: A stream processing framework used to process and aggregate web traffic data in real time.
-- **PySpark**: A Python API for Apache Spark used for distributed data processing and transformations.
+**Apache Kafka**
+
+Purpose: Real-time data streaming and processing.
+
+Components: Kafka Producers, Kafka Topics, Kafka Brokers.
+
+Cluster Manager: Zookeeper.
+
+**Spark Streaming**
+
+Purpose: Real-time data processing.
+
+Components: Spark Jobs, Spark Functions.
+
+Cluster Manager: Spark Driver.
+
+**Apache Flink**
+
+Purpose: Stream processing and orchestration.
+
+Components: Flink Job Manager, Flink Task Manager.
+
+**PySpark**
+
+Purpose: Data aggregation and processing.
+
+Components: DataFrame operations, Data Windows.
+
+**PostgreSQL**
+
+Purpose: Data storage and management.
+
+Components: PostgreSQL Database, Data Tables.
+
+**GitHub**
+
+Purpose: Continuous Integration and Continuous Deployment (CI/CD).
+
+Components: Automate build, test, and deploy pipelines.
+
+**Docker**
+
+Purpose: Containerization for consistent environments.
+
+Components: Docker Containers.
+
+**VS Code**
+
+Purpose: Development environment.
+
+Components: Integrated development and testing environment, supports coding, debugging, and version control.
+
+
 
 ---
 
