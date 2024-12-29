@@ -2,10 +2,15 @@
 # Web Traffic Processing with Apache Kafka, PySpark, and PostgreSQL 
 
 **End-to-End Data Engineering Project**
-Processes raw web traffic data from Kafka, enriches it with geolocation information, and stores it in **PostgreSQL**. This is  used for real-time analytics, such as monitoring web traffic patterns and storing aggregate results for further analysis or reporting.
 
-This project demonstrates the implementation of an end-to-end **real-time data pipeline** using **Apache Kafka**, **Apache Flink**, **PySpark**, **PostgreSQL**, **Docker** to process web traffic data. The solution consists of following job:
+The main goal of this project is to build an **real-time data pipeline** that processes raw web traffic data. The pipeline:
+- Consumes and processes real-time web traffic events using **Apache Kafka**.
+- Enriches the data with geolocation information via **PySpark**.
+- Aggregates and stores the processed data in a **PostgreSQL** database for real-time analytics and reporting.
 
+This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL**, and **Docker** to handle, process, and store web traffic data efficiently for analytical purposes.
+
+---
 
 ## **Table of Contents**
 
@@ -21,8 +26,6 @@ This project demonstrates the implementation of an end-to-end **real-time data p
    - [Start Job](#start-job)
    - [Aggregation Job](#aggregation-job)
 8. [How It Works](#how-it-works)
-9. [License](#license)
-
 ---
 
 ## **Overview**
