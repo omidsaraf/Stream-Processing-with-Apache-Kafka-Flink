@@ -13,11 +13,10 @@ The main goal of this project is to build an **real-time data pipeline** that pr
 This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL**, and **Docker** to handle, process, and store web traffic data efficiently for analytical purposes.
 
 ---
-
 #### **Table of Contents**
 
 1. [Project Structure](#project-structure)
-2. [Workflow and Layers](#Workflow-and-Layers)
+2. [Workflow and Layers](#workflow-and-layers)
 3. [Tools and Technologies](#tools-and-technologies)
 4. [Required Libraries](#required-libraries)
 5. [Job Processing](#job-processing)
@@ -30,7 +29,6 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 10. [Makefile](#makefile)
 11. [How It Works](#how-it-works)
 12. [Cost Analysis](#cost-analysis)
-
 
 ---
 
