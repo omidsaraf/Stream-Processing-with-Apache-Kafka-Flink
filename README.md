@@ -12,7 +12,7 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 
 ---
 
-### **Table of Contents**
+#### **Table of Contents**
 
 1. [Project Structure](#project-structure)
 2. [Tools and Technologies](#tools-and-technologies)
