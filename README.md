@@ -16,18 +16,19 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 #### **Table of Contents**
 
 1. [Project Structure](#project-structure)
-2. [Tools and Technologies](#tools-and-technologies)
-3. [Required Libraries](#required-libraries)
-4. [Job Processing](#job-processing)
+2. [Workflow and Layers](#Workflow-and-Layers)
+3. [Tools and Technologies](#tools-and-technologies)
+4. [Required Libraries](#required-libraries)
+5. [Job Processing](#job-processing)
    1. [Processing Job Code](#processing-job-code)
    2. [Testing the Processing Job](#testing-the-processing-job)
-5. [CI/CD Setup](#cicd-setup)
-6. [PostgreSQL Setup](#postgresql-setup)
-7. [Dependencies](#dependencies)
-8. [Environment Configuration](#environment-configuration)
-9. [Makefile](#makefile)
-10. [Cost Analysis](#cost-analysis)
-11. [How It Works](#how-it-works)
+6. [CI/CD Setup](#cicd-setup)
+7. [PostgreSQL Setup](#postgresql-setup)
+8. [Dependencies](#dependencies)
+9. [Environment Configuration](#environment-configuration)
+10. [Makefile](#makefile)
+11. [Cost Analysis](#cost-analysis)
+12. [How It Works](#how-it-works)
 
 ---
 
@@ -50,7 +51,20 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 ```
 ![image](https://github.com/user-attachments/assets/a78f49a4-e93e-47da-938d-0a22fed3accf)
 
+------------
 
+### **Workflow and Layers**
+
+
+| **Layer**                | **Storage**    | **Pipeline**                         | **Process**                                                                                  | **Cluster**                | **Cluster Manager**                                  |
+|--------------------------|----------------|--------------------------------------|----------------------------------------------------------------------------------------------|----------------------------|------------------------------------------------------|
+| **Data Ingestion**        | Kafka Topics   | Web Servers, Kafka Producers         | Collect data from web servers, send to Kafka Topics                                          | Kafka Cluster              | Zookeeper                                             |
+| **Data Processing**       | Memory         | Kafka Topics, Spark Streaming        | Read data from Kafka Topics, process data with Spark Streaming, orchestrate with Flink         | Spark Cluster, Flink Cluster| Flink Job Manager, Flink Task Manager, Spark Driver  |
+| **Data Aggregation**      | Memory         | Flink, Data Windows                  | Aggregate data by host and referrer using DataFrame operations                                | Spark Cluster, Flink Cluster| Flink Job Manager, Flink Task Manager, Spark Driver  |
+| **Data Storage**          | PostgreSQL     | Flink Output, Data Tables            | Store aggregated data in PostgreSQL tables, make data queryable                               | PostgreSQL Nodes           | N/A (PostgreSQL manages its own data)                |
+| **CI/CD & Development**   | GitHub Repos   | Build, Test, Deploy                  | Automate build, test, and deploy using GitHub Actions, use Docker for consistent environments, development in VS Code | Development and CI/CD environments | N/A (Managed by GitHub Actions and Docker orchestration) |
+
+------------
 
 ---
 
