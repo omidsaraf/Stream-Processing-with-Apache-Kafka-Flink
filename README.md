@@ -263,19 +263,47 @@ Top 10 Records
 
 ###### City Contributions
 
+````plaintext
+         City - Count of contribution
+| Sydney           ████████████████████████████████████████  1500
+| Melbourne        █████████████████████████████████ 1200
+| Brisbane         ███████████████████████████ 1000          
+| New York         ███████████████████████ 900                
+| Los Angeles      █████████████████████ 800                 
+| Toronto          ████████████████████ 750                 
+| Vancouver        ███████████████████ 700                  
+| San Francisco    ██████████████████ 650                     
+| Chicago          █████████████████ 600
+| Tehran           ████████████████ 550
+                    
+`````
+Ploty Map
+````python
+import plotly.express as px
+import pandas as pd
 
-| City              | Contributions | Percentage Contribution | Bar                                       |
-|-------------------|---------------|-------------------------|-------------------------------------------|
-| Sydney            | 1500          | 15%                     | ████████████████████████████████████████  |
-| Melbourne         | 1200          | 12%                     | █████████████████████████████████        |
-| Brisbane          | 1000          | 10%                     | ███████████████████████████              |
-| New York          | 900           | 9%                      | ███████████████████████                  |
-| Los Angeles       | 800           | 8%                      | █████████████████████                    |
-| Toronto           | 750           | 7.5%                    | ████████████████████                     |
-| Vancouver         | 700           | 7%                      | ███████████████████                      |
-| San Francisco     | 650           | 6.5%                    | ██████████████████                       |
-| Chicago           | 600           | 6%                      | █████████████████                        |
-| Tehran            | 550           | 5.5%                    | ████████████████                         |
+# Sample data
+data = {
+    'City': ['Sydney', 'Melbourne', 'Brisbane', 'New York', 'Los Angeles', 'Toronto', 'Vancouver', 'San Francisco', 'Chicago', 'Tehran'],
+    'Country': ['Australia', 'Australia', 'Australia', 'USA', 'USA', 'Canada', 'Canada', 'USA', 'USA', 'Iran'],
+    'Contributions': [1500, 1200, 1000, 900, 800, 750, 700, 650, 600, 550],
+    'Percentage': [15.00, 12.00, 10.00, 9.00, 8.00, 7.50, 7.00, 6.50, 6.00, 5.50]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Create map
+fig = px.scatter_geo(df, locations="Country", locationmode='country names',
+                     color="Contributions", hover_name="City", size="Percentage",
+                     projection="natural earth")
+
+# Save map as image
+fig.write_image("contributions_map.png")
+`````
+![image](https://github.com/user-attachments/assets/66496573-7451-4daf-885a-e61e5ef454b4)
+
+
 
 
 ------------
