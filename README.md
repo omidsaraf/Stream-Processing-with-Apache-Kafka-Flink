@@ -34,22 +34,7 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 
 ### **Project Structure**
 
-```plaintext
-├── .github/
-│   └── workflows/
-│       └── ci.yml               # GitHub Actions CI/CD pipeline
-├── ddl/
-│   └── init.sql                 # SQL script to initialize PostgreSQL table
-├── docker-compose.yml           # Docker Compose for services (Flink, PostgreSQL, Kafka)
-├── Dockerfile                   # Dockerfile for building PyFlink container
-├── libraries.txt                # Python dependencies for local use
-├── Makefile                     # Makefile for managing tasks
-├── stream.env                   # Environment variables for services
-├── job/
-│   ├── Processing_job.py        # Flink job script
-│   ├── test_processing_job.py   # Pytest file for testing
-```
-![image](https://github.com/user-attachments/assets/3ba1d9e3-a4e7-4cf5-8949-ca9851031349)
+   ![image](https://github.com/user-attachments/assets/3ba1d9e3-a4e7-4cf5-8949-ca9851031349)
 
 
 ------------
