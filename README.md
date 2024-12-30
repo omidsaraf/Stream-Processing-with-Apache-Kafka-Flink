@@ -20,17 +20,15 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 2. [Workflow and Layers](#workflow-and-layers)
 3. [Tools and Technologies](#tools-and-technologies)
 4. [Required Libraries](#required-libraries)
-5. [Job Processing](#job-processing)
-   1. [Processing Job Code](#processing-job-code)
+5. [Setup Guide](#setup-guide)
+6. [Check Environments](#check-environments)
+7. [Running the Jobs](#running-the-jobs)
+8. [Job Processing](#job-processing)
+   1. [How It Works](#how-it-works)
    2. [Testing the Processing Job](#testing-the-processing-job)
-6. [CI/CD Setup](#cicd-setup)
-7. [PostgreSQL Setup](#postgresql-setup)
-8. [Dependencies](#dependencies)
-9. [Environment Configuration](#environment-configuration)
-10. [Makefile](#makefile)
-11. [How It Works](#how-it-works)
-12. [Explortory Analysis](#Explortory-Analysis)
-13. [Cost Analysis](#cost-analysis)
+10. [CI/CD Setup](#cicd-setup)
+16. [Explortory Analysis](#Explortory-Analysis)
+17. [Cost Analysis](#cost-analysis)
 
 ---
 
@@ -55,7 +53,7 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 
 ------------
 
-#### **Workflow and Layers**
+### **Workflow and Layers**
 
 
 | **Layer**                | **Storage**    | **Pipeline**                         | **Process**                                                                                  | **Cluster**                | **Cluster Manager**                                  |
@@ -70,7 +68,7 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 
 ---
 
-#### **Tools and Technologies**
+### **Tools and Technologies**
 
 | **Tool/Technology**      | **Purpose**                                      | **Components**                                  | **Cluster Manager**         |
 |--------------------------|--------------------------------------------------|-------------------------------------------------|-----------------------------|
@@ -85,7 +83,7 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 
 ---
 
-#### **Required Libraries**
+### **Required Libraries**
 
 To run the Python jobs, the following libraries are required. You can install them via `pip`:
 
@@ -96,7 +94,7 @@ pip install -r libraries.txt
 
 ---
 
-#### **Setup Guide**
+### **Setup Guide**
 
 ##### **Step 1: Clone the repository**:
 
@@ -131,7 +129,7 @@ This will start **Apache Kafka**, **Apache Flink**, and **PostgreSQL** in separa
 
 ---
 
-#### **Check Environments**
+### **Check Environments**
 
 ##### **Docker**
 
@@ -153,7 +151,7 @@ Access **Apache Flink** via the UI at [http://localhost:8081/#/overview](http://
 
 ---
 
-#### **Running the Jobs**
+### **Running the Jobs**
 
 ##### **Job (Web Traffic Data) Setup**
 
@@ -253,7 +251,7 @@ This part outputs the results of the aggregation to a PostgreSQL database:
 
 ---
 
-##### **How It Works**
+#### **How It Works**
 
 To run this job:
 
@@ -265,6 +263,19 @@ This job:
 - Connects to a **Kafka topic** to stream real-time web traffic data.
 - Processes the data by parsing the JSON and performing aggregation based on **host** and **referrer** within **5-minute windows**.
 - Writes the aggregated web traffic statistics (the number of hits) into a **PostgreSQL database** in an **append-only** manner.
+
+
+#### **Testing the Processing Job**
+
+
+
+
+#### **CI/CD Setup**
+
+
+
+
+
 
 ------
 #### Exploratory Analysis
