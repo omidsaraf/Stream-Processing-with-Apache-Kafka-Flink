@@ -3,7 +3,7 @@
 
 **Github Traffic Processing- Real Time Data Engineering Project**
 
-![image](https://github.com/user-attachments/assets/1d0732c3-01b2-473f-b925-4b3a156d00e6)
+![image](https://github.com/user-attachments/assets/e3c190b5-2cac-4346-a275-2e1e415724f4)
 
 
 The main goal of this project is to build an **real-time data pipeline** that processes raw web traffic data. The pipeline:
