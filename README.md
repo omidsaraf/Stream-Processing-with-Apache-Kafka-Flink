@@ -151,7 +151,7 @@ Access **Apache Flink** via the UI at [http://localhost:8081/#/overview](http://
 
 ---
 
-### **Running the Jobs**
+### **Job Processing**
 
 ##### **Job (Web Traffic Data) Setup**
 
@@ -270,7 +270,7 @@ This job:
 [PyTest.py](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/Job/test_processing_job.py)
 
 ------
-#### **CI/CD Setup**
+### **CI/CD Setup**
 
 [CI/CD code](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/.github/workflows/ci.yml)
 
