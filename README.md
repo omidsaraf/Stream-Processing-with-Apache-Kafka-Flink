@@ -56,7 +56,8 @@ Stream-Processing-with-Apache-Kafka-Flink/
 └── README.md
 ````
 
-![image](https://github.com/user-attachments/assets/637d5ac1-f559-4738-ab80-d384ce838b01)
+![image](https://github.com/user-attachments/assets/4aba766e-7c11-42de-92e4-0f07d9cedf6d)
+
 
 
 ------------
