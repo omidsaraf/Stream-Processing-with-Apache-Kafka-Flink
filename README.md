@@ -28,7 +28,9 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
    2. [Testing the Processing Job](#testing-the-processing-job)
 10. [CI/CD Setup](#cicd-setup)
 16. [Exploratory Analysis](#exploratory-analysis)
-17. [Cost Analysis](#cost-analysis)
+   1. [Data analysis](#data-analysis)
+   2. [Ploty Map](#ploty-map) 
+18. [Cost Analysis](#cost-analysis)
 
 ---
 
@@ -230,6 +232,7 @@ This GitHub Actions workflow automates your CI/CD process. Here's a concise brea
 
 ------
 #### Exploratory Analysis
+###### Data Analysis
 [Code Space](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/exploratory%20analysis/countribution%20analysis.sql)
 
 The goal of the SQL code is to analyze web traffic data from the aggregated_web_traffic table. It specifically aims to:
@@ -277,7 +280,7 @@ Top 10 Records
 | Tehran           ████████████████ 550
                     
 `````
-Ploty Map
+###### Ploty Map
 ````python
 import plotly.express as px
 import pandas as pd
