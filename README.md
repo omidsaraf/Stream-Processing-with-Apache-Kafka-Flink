@@ -27,7 +27,7 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
    1. [How It Works](#how-it-works)
    2. [Testing the Processing Job](#testing-the-processing-job)
 10. [CI/CD Setup](#cicd-setup)
-16. [Explortory Analysis](#explortory-analysis)
+16. [Exploratory Analysis](#exploratory-analysis)
 17. [Cost Analysis](#cost-analysis)
 
 ---
