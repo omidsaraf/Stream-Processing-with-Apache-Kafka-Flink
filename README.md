@@ -313,6 +313,7 @@ San Francisco   650 | ███████████              6.5%
 Chicago         600 | ██████████               6%
 Montreal        550 | █████████                5.5%
 
+
 ------------
 #### Cost Analysis
 
