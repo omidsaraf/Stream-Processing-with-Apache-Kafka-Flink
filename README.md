@@ -269,6 +269,15 @@ This job:
 
 [PyTest.py](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/Job/test_processing_job.py)
 
+-Defines a test function test_data_processing that tests the data processing logic.
+-Creates sample input data to mimic actual data.
+-Defines the schema for the input data.
+-Creates a DataFrame from the input data using the Spark session.
+-Calls the process_data function with the input DataFrame.
+-Performs assertions on the processed DataFrame:
+-Checks that the number of rows in the processed DataFrame matches the input data.
+-Checks if the num_hits column exists in the processed DataFrame.
+
 ------
 ### **CI/CD Setup**
 
