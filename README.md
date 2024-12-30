@@ -1,6 +1,6 @@
 
 ## Real Time Data Processing (Apache Kafka, PySpark, and PostgreSQL)
-
+---
 **Github Traffic Processing- Real Time Data Engineering Project**
 
 ![image](https://github.com/user-attachments/assets/e9f6ec0b-506b-40b8-8bef-1e8c39dbede7)
