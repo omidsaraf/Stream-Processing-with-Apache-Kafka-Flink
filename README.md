@@ -34,6 +34,27 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 
 ### **Project Structure**
 
+Stream-Processing-with-Apache-Kafka-Flink/
+├── .github/
+│    └── workflows
+│        └── ci.yml
+├── Job/
+│   └── _pycach_/
+│   └── .pytest_cache/
+│   ├── Processing job.py
+│   ├── code explain.md
+│   └── tes_processing_job.py
+├── ddl/
+│   └── init.sql
+├── exploratory analysis/
+│   └── contribution analysis.sql
+├── Dockerfile
+├── Makefile
+├── docker-compose.yml
+├── stream.env
+└── README.md
+
+
 ![image](https://github.com/user-attachments/assets/b04ea87c-cac1-4001-8ae3-e14f13ce3687)
 
 ------------
