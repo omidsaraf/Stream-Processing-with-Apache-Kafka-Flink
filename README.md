@@ -57,9 +57,6 @@ Stream-Processing-with-Apache-Kafka-Flink/
 └── README.md
 ````
 
-![image](https://github.com/user-attachments/assets/c67df427-d9e8-4c65-9f20-c0cb6c82d8ed)
-
-
 ------------
 
 ### **Workflow and Layers**
@@ -138,6 +135,10 @@ This will start **Apache Kafka**, **Apache Flink**, and **PostgreSQL** in separa
 ---
 
 ### **Check Environments**
+
+##### **VS Code**
+
+![image](https://github.com/user-attachments/assets/c67df427-d9e8-4c65-9f20-c0cb6c82d8ed)
 
 ##### **Docker**
 
