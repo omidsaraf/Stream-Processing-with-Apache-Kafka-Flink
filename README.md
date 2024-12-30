@@ -264,15 +264,15 @@ This job:
 - Processes the data by parsing the JSON and performing aggregation based on **host** and **referrer** within **5-minute windows**.
 - Writes the aggregated web traffic statistics (the number of hits) into a **PostgreSQL database** in an **append-only** manner.
 
-
+--------
 #### **Testing the Processing Job**
 
-
+[PyTest.py](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/Job/test_processing_job.py)
 
 ------
 #### **CI/CD Setup**
 
-{CI/CD code](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/.github/workflows/ci.yml)
+[CI/CD code](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/.github/workflows/ci.yml)
 
 ------
 #### Exploratory Analysis
