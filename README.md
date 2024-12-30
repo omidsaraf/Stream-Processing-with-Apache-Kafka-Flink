@@ -139,7 +139,7 @@ This will start **Apache Kafka**, **Apache Flink**, and **PostgreSQL** in separa
 
 ##### **VS Code**
 
-![image](https://github.com/user-attachments/assets/c67df427-d9e8-4c65-9f20-c0cb6c82d8ed)
+![image](https://github.com/user-attachments/assets/1f478658-82c7-41b6-b121-dc174bec8e45)
 
 ##### **Docker**
 
