@@ -137,7 +137,7 @@ Access **Apache Flink** via the UI at [http://localhost:8081/#/overview](http://
 ---
 
 ### **Job Processing**
-
+[Job code](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/Job/Processing%20job.py)
 
 #### **How It Works**
 
@@ -209,7 +209,6 @@ This GitHub Actions workflow automates your CI/CD process. Here's a concise brea
 #### Exploratory Analysis
 [Code Space](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/exploratory%20analysis/countribution%20analysis.sql)
 
-##### Goal of the Code
 The goal of the SQL code is to analyze web traffic data from the aggregated_web_traffic table. It specifically aims to:
 
 - Calculate daily interactions by city and country.
