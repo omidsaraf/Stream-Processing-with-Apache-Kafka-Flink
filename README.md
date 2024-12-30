@@ -3,7 +3,7 @@
 
 **Github Traffic Processing- Real Time Data Engineering Project**
 
-![image](https://github.com/user-attachments/assets/3d24e227-11be-4679-b7a4-845b2a300586)
+![image](https://github.com/user-attachments/assets/e9f6ec0b-506b-40b8-8bef-1e8c39dbede7)
 
 
 The main goal of this project is to build an **real-time data pipeline** that processes raw web traffic data. The pipeline:
@@ -13,6 +13,7 @@ The main goal of this project is to build an **real-time data pipeline** that pr
 
 This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL**, and **Docker** to handle, process, and store Github traffic data efficiently for analytical purposes.
 
+---
 ---
 #### **Table of Contents**
 
