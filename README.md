@@ -281,7 +281,7 @@ Top 10 Records
                     
 `````
 ###### Ploty Map
-[code for creating map](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/tree/main/exploratory%20analysis)
+[code for creating map](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/exploratory%20analysis/ploty%20map.py)
 
 ![image](https://github.com/user-attachments/assets/66496573-7451-4daf-885a-e61e5ef454b4)
 
