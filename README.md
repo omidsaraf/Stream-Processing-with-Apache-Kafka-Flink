@@ -26,10 +26,9 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 8. [Job Processing](#job-processing)
    1. [How It Works](#how-it-works)
    2. [Testing the Processing Job](#testing-the-processing-job)
-10. [CI/CD Setup](#cicd-setup)
-11. [Exploratory Analysis](#exploratory-analysis)
-   1. [Data analysis](#data-analysis)
-   2. [Ploty Map](#ploty-map) 
+9. [CI/CD Setup](#cicd-setup)
+10. [Exploratory Analysis](#exploratory-analysis)
+11. [Data Visualisation](#data-visualisation) 
 12. [Cost Analysis](#cost-analysis)
 
 ---
@@ -232,7 +231,7 @@ This GitHub Actions workflow automates your CI/CD process. Here's a concise brea
 
 ------
 #### Exploratory Analysis
-###### Data Analysis
+
 [Code Space](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/exploratory%20analysis/countribution%20analysis.sql)
 
 The goal of the SQL code is to analyze web traffic data from the aggregated_web_traffic table. It specifically aims to:
@@ -264,8 +263,9 @@ Top 10 Records
 | {"city": "Tehran", "count": 550}            | {"country": "Iran", "total_count": 1500}               | 5.50%                   | 500                       | 600                   | 100               |
 
 
-###### City Contributions
+##### Data Visualisation
 
+###### Bar Chart
 ````plaintext
          City - Count of contribution
 | Sydney           ████████████████████████████████████████  1500
@@ -285,7 +285,6 @@ Top 10 Records
 import plotly.express as px
 import pandas as pd
 
-# Sample data
 data = {
     'City': ['Sydney', 'Melbourne', 'Brisbane', 'New York', 'Los Angeles', 'Toronto', 'Vancouver', 'San Francisco', 'Chicago', 'Tehran'],
     'Country': ['Australia', 'Australia', 'Australia', 'USA', 'USA', 'Canada', 'Canada', 'USA', 'USA', 'Iran'],
