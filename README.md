@@ -34,7 +34,7 @@ This project demonstrates the use of **Apache Kafka**, **PySpark**, **PostgreSQL
 
 ---
 
-#### **Project Structure**
+### **Project Structure**
 
 ```plaintext
 ├── .github/
