@@ -274,6 +274,40 @@ This job:
 
 [CI/CD code](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/.github/workflows/ci.yml)
 
+This GitHub Actions workflow automates your CI/CD process. Here's a concise breakdown:
+
+##### Triggers
+- **Push** to `main` branch
+- **Pull requests** targeting `main` branch
+
+##### Jobs
+1. **Build**:
+   - Runs on `ubuntu-latest`
+   - Sets up PostgreSQL and Kafka services with health checks
+
+2. **Install Dependencies**:
+   - Runs on `ubuntu-latest`
+   - Steps:
+     - Checkout code
+     - Set up Python 3.7
+     - Install dependencies from `libraries.txt` and `pytest`
+
+3. **Test**:
+   - Runs on `ubuntu-latest`
+   - Depends on `install_dependencies`
+   - Steps:
+     - Checkout code
+     - Run tests with `pytest`
+
+4. **Docker**:
+   - Runs on `ubuntu-latest`
+   - Depends on `test`
+   - Steps:
+     - Checkout code
+     - Build Docker image
+     - Run Docker containers with `docker-compose`
+     - Stop and clean up Docker containers and images
+
 ------
 #### Exploratory Analysis
 [Code Space](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/exploratory%20analysis/countribution%20analysis.sql)
