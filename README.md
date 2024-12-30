@@ -269,13 +269,10 @@ This job:
 
 
 
-
+------
 #### **CI/CD Setup**
 
-
-
-
-
+{CI/CD code](https://github.com/omidsaraf/Stream-Processing-with-Apache-Kafka-Flink/blob/main/.github/workflows/ci.yml)
 
 ------
 #### Exploratory Analysis
