@@ -273,52 +273,16 @@ This job:
 ##### Goal of the Code
 The goal of the SQL code is to analyze web traffic data from the aggregated_web_traffic table. It specifically aims to:
 
-Calculate daily interactions by city and country.
+- Calculate daily interactions by city and country.
 
-Determine daily interactions for each country.
+- Determine daily interactions for each country.
 
-Calculate total global interactions.
+- Calculate total global interactions.
 
-Provide detailed insights into contributions and percentages for the top 10 records based on city interactions.
+- Provide detailed insights into contributions and percentages for the top 10 records based on city interactions.
 
-Predict changes in interactions using previous and next day contributions.
+- Predict changes in interactions using previous and next day contributions.
 
-##### Explanation of the Steps
-CityInteractions CTE:
-
-Extracts city and country from the headers JSON column.
-
-Calculates the daily sum of num_hits for each city and country.
-
-CountryInteractions CTE:
-
-Extracts country from the headers JSON column.
-
-Calculates the daily sum of num_hits for each country, partitioned by country and event date.
-
-GlobalContribution CTE:
-
-Calculates the total global interactions.
-
-AggregatedInsights CTE:
-
-Combines data from CityInteractions, CountryInteractions, and GlobalContribution.
-
-Constructs JSON objects for city_contribution and country_contribution.
-
-Calculates the percentage of contribution.
-
-Uses window functions to add LAG and LEAD values.
-
-FinalForecast CTE:
-
-Adds a forecasted_change column, which predicts the change in interactions based on the previous and next day contributions.
-
-Final SELECT:
-
-Outputs the detailed contributions and percentages for the top 10 records, along with comprehensive metrics.
-
-Absolutely! Here's the table formatted in GitHub-flavored markdown:
 
 Top 10 Records
 
@@ -334,6 +298,20 @@ Top 10 Records
 | {"city": "San Francisco", "count": 650}     | {"country": "USA", "total_count": 2000}                | 6.50%                   | 600                       | 700                   | 100               |
 | {"city": "Chicago", "count": 600}           | {"country": "USA", "total_count": 2000}                | 6.00%                   | 550                       | 650                   | 100               |
 | {"city": "Montreal", "count": 550}          | {"country": "Canada", "total_count": 1500}             | 5.50%                   | 500                       | 600                   | 100               |
+
+
+###### City Contributions
+
+Sydney         1500 | ███████████████████████ 15%
+Melbourne      1200 | ████████████████████    12%
+Brisbane       1000 | █████████████████       10%
+New York        900 | ███████████████          9%
+Los Angeles     800 | ██████████████           8%
+Toronto         750 | █████████████            7.5%
+Vancouver       700 | ████████████             7%
+San Francisco   650 | ███████████              6.5%
+Chicago         600 | ██████████               6%
+Montreal        550 | █████████                5.5%
 
 ------------
 #### Cost Analysis
